@@ -1,7 +1,7 @@
 import streamlit as st
 
 
-def call_data_Xformer():
+def call_data_transformer():
     st.write(f'Data Transformer called')
     return 'test'
 
@@ -19,7 +19,7 @@ with col_settings:
                   'D:/PhD/My_Databases/FrontalFaces/NewSysTest_6/',
                   )
 
-col_datasets, col_labels, col_process, col_actions, = st.columns([1, 1, 1, 1])
+col_datasets, col_labels, col_process, col_actions, col_status = st.columns([1, 1, 1, 1, 1])
 
 with col_datasets:
     st.header('Select Datasets')
@@ -75,6 +75,12 @@ with col_process:
 with col_actions:
     st.header('Transform Data')
     if st.button("Process faces"):
-        result = call_data_Xformer()
-        st.write(result)
-    st.button("Generate features", on_click=call_data_Xformer)
+        result = call_data_transformer()
+        st.write(color_option)
+
+with col_status:
+    st.header('Log')
+    st.info('Processing ADFES dataset')
+    st.progress(1.0)
+    st.info('Processing CKEXT dataset')
+    st.progress(0.67)

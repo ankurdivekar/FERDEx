@@ -71,7 +71,6 @@ with col_process:
         ('Grayscale', 'RGB')
     )
 
-
 with col_actions:
     st.header('Transform Data')
     if st.button("Process faces"):

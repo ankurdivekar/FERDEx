@@ -1,6 +1,11 @@
 import streamlit as st
 
 
+def call_data_Xformer():
+    st.write(f'Data Transformer called')
+    return 'test'
+
+
 st.set_page_config(layout="wide")
 st.title('FER Data Transformer')
 
@@ -67,11 +72,9 @@ with col_process:
     )
 
 
-def call_data_Xformer():
-    st.write('Data Transformer called!')
-
-
 with col_actions:
     st.header('Transform Data')
-    st.button("Process faces", on_click=call_data_Xformer)
+    if st.button("Process faces"):
+        result = call_data_Xformer()
+        st.write(result)
     st.button("Generate features", on_click=call_data_Xformer)
